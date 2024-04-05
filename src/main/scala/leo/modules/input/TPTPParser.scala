@@ -2392,8 +2392,8 @@ object TPTPParser {
 
 
     def fofTuple(): Seq[FOF.Formula] = {
-      a(LBRACKET)
-      val rb = o(RBRACKET, null)
+      a(LBRACES)
+      val rb = o(RBRACES, null)
       if (rb != null) Seq.empty
       else {
         val f = fofLogicFormula()
@@ -2402,7 +2402,7 @@ object TPTPParser {
           val f = fofLogicFormula()
           fs = fs :+ f
         }
-        a(RBRACKET)
+        a(RBRACES)
         fs
       }
     }
